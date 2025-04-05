@@ -10,7 +10,7 @@ from pathlib import Path
 import os
 import base64
 
-from PythonPackages.OCR.OkraClassifier import OkraClassifier
+from Python.OCR.OkraClassifier import OkraClassifier
 
 
 class OkraLitAPI(litserve.LitAPI):
@@ -19,7 +19,7 @@ class OkraLitAPI(litserve.LitAPI):
     def setup(self, device):
         """Initialize and load the model"""
 
-        model_dir = Path(__file__).parent / 'PythonPackages' / 'OCR' / 'weights'
+        model_dir = Path(__file__).parent / 'Python' / 'OCR' / 'weights'
 
         #
         # Init and load the model
