@@ -1,7 +1,7 @@
-from preprocessing.scorefields import CTRSegments
-from OCR import okra
-from OCR import violin as v
-import ImagePackager
+from PythonPackages.preprocessing.scorefields import CTRSegments
+from PythonPackages.OCR import okra
+from PythonPackages.OCR import violin as v
+from PythonPackages import ImagePackager
 
 
 max_score_per_field = [5, 5, 5, 5, 5, 3, 0, 2, 5, 5, 20, 5, 10, 25, 5, 5, None, None]
@@ -33,8 +33,6 @@ def run(args, image_buffer):
 
     Parameters:
         args (dict): A dictionary containing the arguments:
-                     'torchserve' (bool): A flag to specify whether TorchServe
-                                          should be used or not.
                      'corner_points' (dict): A dictionary containing the
                                              coordinates of the page corners
                                              (optional).
@@ -54,7 +52,7 @@ def run(args, image_buffer):
     extracted_fields = CTRSegments(image_buffer, args['corner_points'])
 
     # Prepare the OCR
-    dg = okra.DigitGetter(ts=args['torchserve'])
+    dg = okra.DigitGetter()
     dg.use_width_as_reference = True
 
     output_dict = {}
@@ -96,7 +94,7 @@ def _debug_main():
         print(f'\n  Cannot open "{sys.argv[1]}"\n')
         return
 
-    ret_val = run({'torchserve': False}, image_buffer)
+    ret_val = run({}, image_buffer)
 
     for key in ret_val.keys():
 

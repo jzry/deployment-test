@@ -1,7 +1,7 @@
 # Web-based Automated Scorecard Reading and Calculation
 
 This is a UCF senior design project completed by a team
-of six from September 2024 - May 2025 and is a practical
+of six from September 2024 - April 2025 and is a practical
 application of the knowledge gained from our undergraduate
 computer science education.
 
@@ -14,8 +14,13 @@ must complete courses between 25 and 100 miles long. Participants
 are scored based on their time and the soundness of the horse. For
 safety, horses are evaluated by veterinarians at regular intervals
 during the event and are only allowed to continue if they pass the
-checkup. Two scorecards are typically used: the Competitive Trail
-Ride (CTR) form and the Best Condition Evaluation (BCE) form.
+checkup. Two scorecards are typically used: the
+[Competitive Trail Ride (CTR)](https://www.distanceriding.org/wp-content/uploads/2016/09/Judge-Score-Card.pdf)
+form and the
+[Best Condition Evaluation (BCE)](https://aerc.org/wp-content/uploads/2024/04/BestConditionEvaluation2024.pdf)
+form.
+For more information about endurance riding, see
+[this article](https://aerc.org/wp-content/uploads/2023/09/EnduranceBasics2023.pdf).
 
 ## Goal
 
@@ -42,17 +47,17 @@ See the documentation below for more information.
 
 [Express Backend](./backend#expressjs-server)
 
-[Image Processing and Segmentation](./Python/Preprocessing_Package/preprocessing#image-processing-test)
+[Image Processing and Segmentation](./backend/PythonPackages/preprocessing#image-processing-test)
 
-[Optical Character Recognition](./Python/OCR_Package/OCR#ocr-package)
+[Optical Character Recognition](./backend/PythonPackages/OCR#ocr-package)
 
 [API Reference](./backend/API.md)
 
 [Environment Variables Reference](./ENV.md)
 
-[Python Setup](./Python#configuring-python)
+[Python Setup](./backend/PythonPackages#configuring-python)
 
-[TorchServe Setup](./model_server#torchserve-setup-guide)
+[LitServe](./backend/LITSERVE.md)
 
 [Rick's Video](https://www.youtube.com/watch?v=E4WlUXrJgy4)
 
@@ -60,9 +65,9 @@ See the documentation below for more information.
 
 1. The first step is to clone this repository onto your device using [git](https://git-scm.com/).
 1. If you have not done so already, install [Node.js](https://nodejs.org/en).
-1. Follow the directions in the [Python Setup](./Python#configuring-python) guide.
+1. Follow the directions in the [Python Setup](./backend/PythonPackages#configuring-python) guide.
 1. Define the environment variables in the appropriate files as described in the
 [Environment Variables Reference](./ENV.md).
 1. Install dependencies and run the [Express Backend](./backend#expressjs-server).
 1. Install dependencies and run the [React Frontend](./frontend#getting-started-with-create-react-app).
-
+1. Run [LitServe](./backend/LITSERVE.md).
